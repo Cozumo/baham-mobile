@@ -2,20 +2,22 @@ import { StyleSheet, Text, View } from "react-native";
 
 export default function AppFooter(props) {
     return (
-        <View style={styles.container}>
-            <Text sylte={styles.footer}> {props.copyright}
-                <Text style={{fontStyle: 'italic'}}>{props.location}</Text>
+        <View style={styles.footer}>
+            <Text sylte={styles.copyrightStyle}> {props.copyright}
+                <Text style={styles.locationStyle}>{props.location}</Text>
             </Text>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 0.075,
-        backgroundColor: 'fuchsia'
-    },
     footer: {
-        textAlign: 'auto',
+        flex: 0.075,
+    },
+    copyrightStyle: {
+        textAlign: 'auto'
+    },
+    locationStyle: {
+        fontStyle: 'italic'
     }
 });

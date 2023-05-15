@@ -28,8 +28,8 @@ const FeedbackForm =()=>{
 
 const styles = StyleSheet.create({
     feedbackContainer: {
-        backgroundColor: 'gray',
-        padding: 20
+        padding: 20,
+        marginBottom: 20
     },
 });
 
