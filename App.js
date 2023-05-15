@@ -1,8 +1,7 @@
 import { FlatList, ScrollView, StyleSheet, Text, View, SectionList } from 'react-native';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
-import Login from './Login';
-
+import FeedbackForm from './Feedback';
 const allVehicles = [ 
   {
     "type": "Sedan",
@@ -75,14 +74,14 @@ const renderVehicleModelItem = ({ item }) => {
 }  
   
 // Separator separates items. We're only using an empty view with border for now
-const itemSeparatorComponent = () => <View style={{ borderColor: 'black', borderStyle: "dotted", borderWidth: 1 }}></View>;
+const itemSeparatorComponent = () => <View style={styles.itemSeparatorStyle}></View>;
 
   return (
     // Demo: Section List
     <View style={styles.container}>
-      {/* Attach header component */}
-      <AppHeader />
-      <Login />
+
+      <AppHeader text="Baham (باہم)"/>
+
       <View style={styles.mainContainer}>
         <SectionList 
         sections={allVehicles}
@@ -91,9 +90,13 @@ const itemSeparatorComponent = () => <View style={{ borderColor: 'black', border
         ItemSeparatorComponent={itemSeparatorComponent}
         keyExtractor={(item, index) => item.id * (item.id + index)}
         />
+        
+        <FeedbackForm/>
       </View>
-      {/* Attach footer component */}
-      <AppFooter />
+
+
+      <AppFooter copyright="Copyright: Baham by project Dareecha (2023) -" location="Karachi Insitute of Economics & Technology" />
+
     </View>
   );
 }
@@ -113,5 +116,10 @@ const styles = StyleSheet.create({
     margin: 12,
     fontSize: 16,
     color: 'maroon'
+  },
+  itemSeparatorStyle: {
+    borderColor: 'black', 
+    borderStyle: "dotted", 
+    borderWidth: 1
   }
 });

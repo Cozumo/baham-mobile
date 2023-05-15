@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function AppFooter() {
+export default function AppFooter(props) {
     return (
         <View style={styles.container}>
-            <Text sylte={styles.footer}>Copyright: Baham by project Dareecha (2023) - 
-                <Text style={{fontStyle: 'italic'}}>Karachi Insitute of Economics & Technology</Text>
+            <Text sylte={styles.footer}> {props.copyright}
+                <Text style={{fontStyle: 'italic'}}>{props.location}</Text>
             </Text>
         </View>
     );
