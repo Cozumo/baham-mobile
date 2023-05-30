@@ -1,22 +1,29 @@
+import 'react-native-gesture-handler';
 import { StyleSheet, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 import Login from './Login';
 import Menu from './Menu';
+import Home from './Home';
+import About from './About';
+import Settings from './Settings';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
         <AppHeader />
-          <Stack.Navigator initialRouteName='Login' screenOptions={{headerStyle: {backgroundColor: 'lightyellow'}}}>
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="Menu" component={Menu} />
-          </Stack.Navigator>
+          <Drawer.Navigator initialRouteName="Login">
+            <Drawer.Screen name="Home" component={Home} />
+            <Drawer.Screen name="Menu" component={Menu} />
+            <Drawer.Screen name="About" component={About} />
+            <Drawer.Screen name="Settings" component={Settings} />
+            <Drawer.Screen name="Login" component={Login} />
+          </Drawer.Navigator>
         <AppFooter />
       </View>
     </NavigationContainer>
