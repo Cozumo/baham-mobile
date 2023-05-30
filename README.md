@@ -2,7 +2,7 @@
 
 ## Drawer
 
-<div style="height: 100px"> ![Drawer](https://github.com/Cozumo/baham-mobile/assets/79846702/f6cde385-9565-406d-9868-bed55c777ca4) </div>
+ ![Drawer](https://github.com/Cozumo/baham-mobile/assets/79846702/f6cde385-9565-406d-9868-bed55c777ca4) 
 
 ## Home
 
